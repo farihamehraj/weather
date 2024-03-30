@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="search-box">
+          <input
+            type="text"
+            placeholder="Enter a City and Press Enter"
+            class="input"
+          />
+        </div>
+      </div>
+
+      <div class="location-not-found">
+        <h1>Location Not Found...</h1>
+        <img src="404.gif" alt="404 Error" />
+      </div>
+
+      <div class="weather-body">
+        <h2 id="locationTitle"></h2>
+        <img src="sunny.png" alt="Weather Pic" class="weather-pic" />
+
+        <div class="weather-data">
+          <p class="current-temp">
+            <span class="temp-value">${fahrenheit}°F (${celsius}°C)</span>
+          </p>
+          <p class="description">
+            <span class="description-value"
+              >${weather_data.list[0].weather[0].description}</span
+            >
+          </p>
+          <p class="high-low">
+            High:
+            <span class="high-value"
+              >${highTempFahrenheit}°F (${highTempCelsius}°C)</span
+            >
+            | Low:
+            <span class="low-value"
+              >${lowTempFahrenheit}°F (${lowTempCelsius}°C)</span
+            >
+          </p>
+        </div>
+
+        <div class="weather-etc">
+          <!-- should windspeed go first or humidity? humidity first looks better? -->
+          <div class="humidity">
+            <div class="text">
+              <p>Humidity</p>
+              <span id="humidity"></span>
+            </div>
+          </div>
+          <div class="windspeed">
+            <div class="text">
+              <p>Wind Speed</p>
+              <span id="wind-speed"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="forecast-title" id="forecastTitle">5-Day Forecast</div>
+      <div class="forecast-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
